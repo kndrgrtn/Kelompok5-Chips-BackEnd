@@ -2,94 +2,7 @@ import {View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, SafeAreaVie
 import FAIcon from 'react-native-vector-icons/AntDesign';
 
 const style = StyleSheet.create({
-    home : {
-        width: 412,
-        backgroundColor: '#fff',
-    },
-    input : {
-        height: 70,
-        backgroundColor: '#F2F4F7',
-        paddingLeft: 50,
-        marginLeft: 5,
-        marginTop: 20,
-        width: 400,
-        borderRadius :100,
-    },
-    category : {
-        marginLeft: 20,
-        marginTop:20,
-    },
-    categoryItem : {
-        marginHorizontal:2,
-        marginBottom:20 ,
-        borderColor :'black',
-        fontSize: 15,
-        borderWidth:1,
-        borderRadius: 100,
-        paddingHorizontal:30,
-        paddingVertical:10,
-    },
-    header : {
-        marginLeft: 20,
-        marginTop: 40,
-        fontWeight: 'bold',
-        fontSize: 30
-    },
-    profileText : {
-        marginLeft: 25,
-        marginTop: 35,
-        marginBottom: 15,
-    },
-    listBarang : {
-        flex: 1,
-        flexDirection : 'row',
-    },
-    barang : {
-        width:150,
-        height:225,
-        marginHorizontal:25,
-        marginVertical:10
-    },
-    barangflex : {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent:'space-between',
-        width:150,
-        alignItems :'center'
-    },
-    barangImg : {
-        width: 160,
-        height:130
-    },
-    barangTextBold : {
-        fontWeight: 'bold',
-    },
-    barangIcon :{
-        color: '#fff',
-        backgroundColor :'#1C2536',
-        paddingHorizontal:4,
-        paddingVertical:1,
-        width:'auto',
-        justifyContent:"center",
-        borderRadius:100,
-    },
-    scrollView : {
-        height : 500
-    },
-    white : {
-        color : '#fff',
-        fontSize: 25,
-        textAlign: 'center',
-        width: 25
-    },
-    searchIcon : {
-        position: 'absolute',
-        top : 230,
-        zIndex: 2,
-        height: 30,
-        left : 20,
-        width: 30
-    }
+  
 });
 
 const Homepage = ({navigation}) => {
@@ -99,87 +12,115 @@ const Homepage = ({navigation}) => {
     }
 
     return(
-        <SafeAreaView style={style.home}>
+        <SafeAreaView>
             <View>
-                <Text style={style.profileText}>Hi, Brandon Salim</Text>
-                <Text style={style.header}>Compact And Easy Ordering For You</Text>
-                <Image source={require('../assets/search-normal.png')} style={style.searchIcon} />
-                <TextInput style={style.input} placeholder="Search here" />
-                <ScrollView style={style.category} horizontal={true}>
-                    <Text style={style.categoryItem}>Popular</Text>
-                    <Text style={style.categoryItem}>Recent</Text>
-                    <Text style={style.categoryItem}>Aproved</Text>
-                    <Text style={style.categoryItem}>Simple</Text>
-                </ScrollView>
+        <Text style={{marginHorizontal:10, marginVertical:20}} >Hi, Brandon Salim</Text>
+        <View style={{marginHorizontal:10, marginVertical:10}}>
+          <Text style={{fontWeight:600, fontSize:30, marginBottom:30}}>Compact And Easy Ordering For You</Text>
+          <TextInput style={{backgroundColor:'#F2F4F7', paddingHorizontal:20, paddingVertical:15, borderRadius:50}} placeholder="Search Here"/>
+          <ScrollView horizontal={true} style={{flexDirection:'row', marginVertical:20}}>
+            <TouchableOpacity style={{borderWidth:1, borderRadius:50, paddingVertical:7.5, paddingHorizontal:20, marginHorizontal:10}}><Text>Popular</Text></TouchableOpacity>
+            <TouchableOpacity style={{borderWidth:1, borderRadius:50, paddingVertical:7.5, paddingHorizontal:20, marginHorizontal:10}}><Text>Recent</Text></TouchableOpacity>
+            <TouchableOpacity style={{borderWidth:1, borderRadius:50, paddingVertical:7.5, paddingHorizontal:20, marginHorizontal:10}}><Text>Approved</Text></TouchableOpacity>
+            <TouchableOpacity style={{borderWidth:1, borderRadius:50, paddingVertical:7.5, paddingHorizontal:20, marginHorizontal:10}}><Text>Simple</Text></TouchableOpacity>
+          </ScrollView>
+        </View>
+      </View>
+      <ScrollView style={{height:400}} >
+        <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
+          <View>
+            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+              <View>
+                <Text>Lorem Ipsum</Text>
+                <Text>IDR 12.00</Text>
+              </View>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
             </View>
-            <ScrollView style={style.scrollView}>
-                <View style={style.listBarang}>
-                    <View style={style.barang}>
-                        <Image style={style.barangImg} source={require('../assets/th.png')}/>
-                        <View style={style.barangflex}>
-                            <View>
-                                <Text>Lorem Ipsum</Text>
-                                <Text style={style.barangTextBold}>IDR 12.00</Text>
-                            </View>
-                            <TouchableOpacity style={style.barangIcon} onPress={handleDetail} ><Text style={style.white}>+</Text></TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={style.barang}>
-                        <Image style={style.barangImg} source={require('../assets/th(1).png')}/>
-                        <View style={style.barangflex}>
-                            <View>
-                                <Text>Lorem Ipsum</Text>
-                                <Text style={style.barangTextBold}>IDR 12.00</Text>
-                            </View>
-                            <TouchableOpacity style={style.barangIcon} onPress={handleDetail} ><Text style={style.white}>+</Text></TouchableOpacity>
-                        </View>
-                    </View>
-                </View>
-                <View style={style.listBarang}>
-                    <View style={style.barang}>
-                        <Image style={style.barangImg} source={require('../assets/th(2).png')}/>
-                        <View style={style.barangflex}>
-                            <View>
-                                <Text>Lorem Ipsum</Text>
-                                <Text style={style.barangTextBold}>IDR 12.00</Text>
-                            </View>
-                            <TouchableOpacity style={style.barangIcon} onPress={handleDetail} ><Text style={style.white}>+</Text></TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={style.barang}>
-                        <Image style={style.barangImg} source={require('../assets/th(3).png')}/>
-                        <View style={style.barangflex}>
-                            <View>
-                                <Text>Lorem Ipsum</Text>
-                                <Text style={style.barangTextBold}>IDR 12.00</Text>
-                            </View>
-                            <TouchableOpacity style={style.barangIcon} onPress={handleDetail} ><Text style={style.white}>+</Text></TouchableOpacity>
-                        </View>
-                    </View>
-                </View>
-                <View style={style.listBarang}>
-                    <View style={style.barang}>
-                        <Image style={style.barangImg} source={require('../assets/th(4).png')}/>
-                        <View style={style.barangflex}>
-                            <View>
-                                <Text>Lorem Ipsum</Text>
-                                <Text style={style.barangTextBold}>IDR 12.00</Text>
-                            </View>
-                            <TouchableOpacity style={style.barangIcon} onPress={handleDetail} ><Text style={style.white}>+</Text></TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={style.barang}>
-                        <Image style={style.barangImg} source={require('../assets/th.png')}/>
-                        <View style={style.barangflex}>
-                            <View>
-                                <Text>Lorem Ipsum</Text>
-                                <Text style={style.barangTextBold}>IDR 12.00</Text>
-                            </View>
-                            <TouchableOpacity style={style.barangIcon} onPress={handleDetail} ><Text style={style.white}>+</Text></TouchableOpacity>
-                        </View>
-                    </View>
-                </View>
-            </ScrollView>
+          </View>
+          <View>
+            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+              <View>
+                <Text>Lorem Ipsum</Text>
+                <Text>IDR 12.00</Text>
+              </View>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
+          <View>
+            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+              <View>
+                <Text>Lorem Ipsum</Text>
+                <Text>IDR 12.00</Text>
+              </View>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+            </View>
+          </View>
+          <View>
+            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+              <View>
+                <Text>Lorem Ipsum</Text>
+                <Text>IDR 12.00</Text>
+              </View>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
+          <View>
+            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+              <View>
+                <Text>Lorem Ipsum</Text>
+                <Text>IDR 12.00</Text>
+              </View>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+            </View>
+          </View>
+          <View>
+            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+              <View>
+                <Text>Lorem Ipsum</Text>
+                <Text>IDR 12.00</Text>
+              </View>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
+          <View>
+            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+              <View>
+                <Text>Lorem Ipsum</Text>
+                <Text>IDR 12.00</Text>
+              </View>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+            </View>
+          </View>
+          <View>
+            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+              <View>
+                <Text>Lorem Ipsum</Text>
+                <Text>IDR 12.00</Text>
+              </View>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </ScrollView>
+      <View style={{flexDirection:'row', justifyContent:'space-evenly', marginTop:20}}>
+        <TouchableOpacity><Image source={require('./assets/home-2.png')} /></TouchableOpacity>
+        <TouchableOpacity><Image source={require('./assets/shopping-cart.png')}/></TouchableOpacity>
+        <TouchableOpacity><Image source={require('./assets/user.png')} /></TouchableOpacity>
+      </View>
         </SafeAreaView>
     )
 }
