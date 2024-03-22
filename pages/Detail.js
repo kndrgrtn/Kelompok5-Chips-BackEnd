@@ -1,135 +1,99 @@
-import {View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, SafeAreaView, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+  ScrollView,
+  SafeAreaView,
+  TextInput,
+} from 'react-native';
+
+import {CheckBox} from 'react-native';
+
+import React, {useState, useEffect} from 'react';
 
 const DetailPage = ({navigation}) => {
 
     const style = StyleSheet.create({
-        detail : {
-          width : 412,
-          backgroundColor : '#fff'
-        },  
-        backgroundButton : {
-          backgroundColor : 'black',
-          paddingVertical : 10,
-          paddingHorizontal : 10,
-          borderRadius : 100
-        },
-        header : {
-          flexDirection : 'row',
-          alignItems : 'center',
-          justifyContent : 'space-between',
-          marginBottom : 20,
-          backgroundColor : '#F2F4F7',
-          paddingHorizontal : 10,
-          paddingVertical : 10
-        },
-        imageBackgroundButton : {
-          width : 40,
-          height : 40,
-          flexDirection : 'row',
-          alignItems : 'center',
-          justifyContent : 'center'
-        },
-        imagePreview : {
-          width : 400,
-          borderRadius : 20
-        },
-        textChoice : {
-          backgroundColor : '#1C2536',
-          color : 'white',
-          paddingHorizontal : 7.5,
-          paddingVertical : 1.25,
-          borderRadius : 100,
-          marginHorizontal : 10,
-        },
-        flex : {
-          flexDirection :'row'
-        },
-        desc : {
-          marginTop : 10,
-          fontSize : 17.5,
-          color : '#98A2B3',
-          paddingHorizontal : 10
-        },
-        subHeader : {
-          flexDirection : 'row',
-          alignItems : 'center',
-          justifyContent : 'space-between',
-          marginTop : 20,
-          paddingHorizontal : 10,
-        },
-        rating : {
-          flexDirection : 'row',
-          alignItems : 'center',
-          justifyContent : 'space-between',
-          marginTop : 10,
-          marginBottom : 30,
-          paddingHorizontal : 10
-        },
-        footerButton : {
-          flexDirection : 'row',
-          justifyContent : 'center',
-          marginTop : 100,
-          paddingBottom : 50
-        },
-        buttonEdit : {
-          borderWidth : 1.5,
-          borderRadius : 100,
-          paddingVertical : 15,
-          paddingHorizontal : 35
-        },
-        textEdit : {
-          fontSize : 15
-        },
-        buttonCart : {
-          backgroundColor : '#1C2536',
-          borderRadius : 100,
-          paddingVertical : 15,
-          paddingHorizontal : 100,
-          marginLeft : 20,
-        },
-        textCart : {
-          color: 'white',
-          fontSize : 15
-        }
+      backgroundButton : {
+        backgroundColor : 'black',
+        paddingVertical : 10,
+        paddingHorizontal : 10,
+        borderRadius : 100
+      },
+      header : {
+        flexDirection : 'row',
+        flex : 1,
+        alignItems : 'center',
+        justifyContent : 'space-between',
+        marginBottom : 20,
+        backgroundColor : '#F2F4F7',
+        paddingHorizontal : 10,
+        paddingVertical : 20,
+      },
+      imageBackgroundButton : {
+        width : 40,
+        height : 40,
+        flexDirection : 'row',
+        alignItems : 'center',
+        justifyContent : 'center'
+      },
     });
 
     return(
-        <SafeAreaView style={style.detail}>
-            <View style={style.header}>
-                <TouchableOpacity style={style.backgroundButton} ><Image style={style.imageBackgroundButton} source={require('../assets/arrow-left.png')}/></TouchableOpacity>
-                <Text style={{fontSize : 20, textAlign : 'center'}}>Detail</Text>
-                <Text style={{color : '#F2F4F7'}}>.</Text>
+      <SafeAreaView>
+      <View style={style.header}>
+        <TouchableOpacity style={style.backgroundButton} ><Image style={style.imageBackgroundButton} source={require('./assets/arrow-left.png')}/></TouchableOpacity>
+        <Text style={{fontSize : 20, textAlign : 'center', fontWeight:700}}>Detail</Text>
+        <Text style={{color : '#F2F4F7'}}>.</Text>
+      </View>
+      <ScrollView style={{maxHeight:690}}>
+        <Image source={require('./assets/th(1).png')} style={{alignItems:'center',borderRadius:15, marginHorizontal:20}}/>
+        <View>
+          <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center', marginHorizontal:20, marginTop:20, marginBottom:10}}>
+            <Text>Main Board</Text>
+            <Text style={{fontWeight:700}}>IDR 12.00</Text>
+          </View>
+          <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center', marginHorizontal:20}}>
+            <View style={{flexDirection:'row', alignItems:'center'}}>
+              <Image source={require('./assets/Star.png')}/>
+              <Image source={require('./assets/Star.png')}/>
+              <Image source={require('./assets/Star.png')}/>
+              <Image source={require('./assets/Star.png')}/>
+              <Image source={require('./assets/Star.png')}/>
+              <Text>4.8</Text>
             </View>
-            <View>
-                <Image source={require('../assets/th(2).png')} style={style.imagePreview} />
-                <View style={style.subHeader}>
-                    <Text style={{fontSize : 15}} >Tittle</Text>
-                    <Text style={{fontWeight : 'bold', fontSize : 20}}>IDR 12.00</Text>
-                </View>
-                <View style={style.rating}>
-                    <View style={style.flex}>
-                        <Image source={require('../assets/Star.png')} style={{width : 20, height : 20}}/>
-                        <Image source={require('../assets/Star.png')} style={{width : 20, height : 20}}/>
-                        <Image source={require('../assets/Star.png')} style={{width : 20, height : 20}}/>
-                        <Image source={require('../assets/Star.png')} style={{width : 20, height : 20}}/>
-                        <Image source={require('../assets/Star.png')} style={{width : 20, height : 20}}/>
-                        <Text style={{fontSize : 15, marginHorizontal : 5}} >4.8</Text>
-                    </View>
-                    <View style={style.flex}>
-                        <TouchableOpacity><Text style={{paddingHorizontal : 5}}>-</Text></TouchableOpacity>
-                        <Text style={style.textChoice} >1</Text>
-                        <TouchableOpacity><Text style={{paddingHorizontal : 5}}>+</Text></TouchableOpacity>
-                    </View>
-                </View>
-                <Text style={style.desc}>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-                </Text>
+            <View style={{flexDirection:'row', alignItems:'center'}}>
+              <TouchableOpacity><Text>-</Text></TouchableOpacity>
+              <Text>1</Text>
+              <TouchableOpacity><Text>+</Text></TouchableOpacity>
             </View>
-            <View style={style.footerButton} >
-                <TouchableOpacity style={style.buttonEdit}><Text style={style.textEdit} >Edit</Text></TouchableOpacity>
-                <TouchableOpacity style={style.buttonCart}><Text style={style.textCart} >Add to Cart</Text></TouchableOpacity>
-            </View>
-        </SafeAreaView> 
+          </View>
+          <Text style={{marginHorizontal:20, fontSize:15, textAlign:'justify',marginVertical:10}}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</Text>
+        </View>
+        <View>
+          <Text style={{marginHorizontal:20, marginVertical:15}} >Tambahkan Komponen</Text>
+          <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal:20, marginVertical:5}}>
+            <Text>Slot Pin</Text>
+            <CheckBox value={slotpin} onValueChange={newValue => {setSlotpin(newValue)}}/>
+          </View>
+          <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal:20, marginVertical:5}}>
+            <Text>Button</Text>
+            <CheckBox value={button} onValueChange={newValue => {setButton(newValue)}}/>
+          </View>
+          <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal:20, marginVertical:5}}>
+            <Text>Display</Text>
+            <CheckBox value={display} onValueChange={newValue => {setDisplay(newValue)}}/>
+          </View>
+          <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal:20, marginVertical:5}}>
+            <Text>Slot IDE</Text>
+            <CheckBox value={slotIDE} onValueChange={newValue => {setSlotIDE(newValue)}}/>
+          </View>
+        </View>
+        <TouchableOpacity style={{backgroundColor:'#1C2536', marginHorizontal:20, paddingVertical:12.5, borderRadius:50, marginVertical:10}} ><Text style={{color:'white', textAlign:'center'}}>Add to Cart</Text></TouchableOpacity>
+      </ScrollView>
+    </SafeAreaView>
     )
 }
 
