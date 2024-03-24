@@ -44,12 +44,12 @@ const DetailPage = ({navigation}) => {
     return(
       <SafeAreaView>
       <View style={style.header}>
-        <TouchableOpacity style={style.backgroundButton} ><Image style={style.imageBackgroundButton} source={require('./assets/arrow-left.png')}/></TouchableOpacity>
+        <TouchableOpacity style={style.backgroundButton} ><Image style={style.imageBackgroundButton} source={require('../assets/arrow-left.png')}/></TouchableOpacity>
         <Text style={{fontSize : 20, textAlign : 'center', fontWeight:700}}>Detail</Text>
         <Text style={{color : '#F2F4F7'}}>.</Text>
       </View>
       <ScrollView style={{maxHeight:690}}>
-        <Image source={require('./assets/th(1).png')} style={{alignItems:'center',borderRadius:15, marginHorizontal:20}}/>
+        <Image source={require('../assets/th(1).png')} style={{alignItems:'center',borderRadius:15, marginHorizontal:20}}/>
         <View>
           <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center', marginHorizontal:20, marginTop:20, marginBottom:10}}>
             <Text>Main Board</Text>
@@ -57,11 +57,11 @@ const DetailPage = ({navigation}) => {
           </View>
           <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center', marginHorizontal:20}}>
             <View style={{flexDirection:'row', alignItems:'center'}}>
-              <Image source={require('./assets/Star.png')}/>
-              <Image source={require('./assets/Star.png')}/>
-              <Image source={require('./assets/Star.png')}/>
-              <Image source={require('./assets/Star.png')}/>
-              <Image source={require('./assets/Star.png')}/>
+              <Image source={require('../assets/Star.png')}/>
+              <Image source={require('../assets/Star.png')}/>
+              <Image source={require('../assets/Star.png')}/>
+              <Image source={require('../assets/Star.png')}/>
+              <Image source={require('../assets/Star.png')}/>
               <Text>4.8</Text>
             </View>
             <View style={{flexDirection:'row', alignItems:'center'}}>

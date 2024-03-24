@@ -29,97 +29,97 @@ const Homepage = ({navigation}) => {
       <ScrollView style={{height:400}} >
         <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
           <View>
-            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
               <View>
                 <Text>Lorem Ipsum</Text>
                 <Text>IDR 12.00</Text>
               </View>
-              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
             </View>
           </View>
           <View>
-            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
               <View>
                 <Text>Lorem Ipsum</Text>
                 <Text>IDR 12.00</Text>
               </View>
-              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
-            </View>
-          </View>
-        </View>
-        <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
-          <View>
-            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
-            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-              <View>
-                <Text>Lorem Ipsum</Text>
-                <Text>IDR 12.00</Text>
-              </View>
-              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
-            </View>
-          </View>
-          <View>
-            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
-            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-              <View>
-                <Text>Lorem Ipsum</Text>
-                <Text>IDR 12.00</Text>
-              </View>
-              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
             </View>
           </View>
         </View>
         <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
           <View>
-            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
               <View>
                 <Text>Lorem Ipsum</Text>
                 <Text>IDR 12.00</Text>
               </View>
-              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
             </View>
           </View>
           <View>
-            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
               <View>
                 <Text>Lorem Ipsum</Text>
                 <Text>IDR 12.00</Text>
               </View>
-              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
             </View>
           </View>
         </View>
         <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
           <View>
-            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
               <View>
                 <Text>Lorem Ipsum</Text>
                 <Text>IDR 12.00</Text>
               </View>
-              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
             </View>
           </View>
           <View>
-            <Image source={require('./assets/th(1).png')} style={{width:150, height:150}} />
+            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
               <View>
                 <Text>Lorem Ipsum</Text>
                 <Text>IDR 12.00</Text>
               </View>
-              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('./assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
+          <View>
+            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
+            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+              <View>
+                <Text>Lorem Ipsum</Text>
+                <Text>IDR 12.00</Text>
+              </View>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
+            </View>
+          </View>
+          <View>
+            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
+            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+              <View>
+                <Text>Lorem Ipsum</Text>
+                <Text>IDR 12.00</Text>
+              </View>
+              <TouchableOpacity style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
             </View>
           </View>
         </View>
       </ScrollView>
       <View style={{flexDirection:'row', justifyContent:'space-evenly', marginTop:20}}>
-        <TouchableOpacity><Image source={require('./assets/home-2.png')} /></TouchableOpacity>
-        <TouchableOpacity><Image source={require('./assets/shopping-cart.png')}/></TouchableOpacity>
-        <TouchableOpacity><Image source={require('./assets/user.png')} /></TouchableOpacity>
+        <TouchableOpacity><Image source={require('../assets/home-2.png')} /></TouchableOpacity>
+        <TouchableOpacity><Image source={require('../assets/shopping-cart.png')}/></TouchableOpacity>
+        <TouchableOpacity><Image source={require('../assets/user.png')} /></TouchableOpacity>
       </View>
         </SafeAreaView>
     )
