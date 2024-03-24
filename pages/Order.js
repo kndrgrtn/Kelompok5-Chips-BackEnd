@@ -13,7 +13,7 @@ import {CheckBox} from 'react-native';
   
 import React, {useState, useEffect} from 'react';
 
-const myOrder = ({navigation}) => {
+const MyorderPage = ({navigation}) => {
 
     const style = StyleSheet.create({
         backgroundButton : {
@@ -167,4 +167,4 @@ const myOrder = ({navigation}) => {
     )
 }
 
-export default myOrder;
+export default MyorderPage;

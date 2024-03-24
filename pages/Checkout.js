@@ -13,7 +13,7 @@ import {
   
   import React, {useState, useEffect} from 'react';
 
-const Checkout = ({navigation}) => {
+const CheckoutPage = ({navigation}) => {
 
     const style = StyleSheet.create({
         backgroundButton : {
@@ -44,13 +44,13 @@ const Checkout = ({navigation}) => {
     return(
         <SafeAreaView>
       <View style={style.header}>
-        <TouchableOpacity style={style.backgroundButton} ><Image style={style.imageBackgroundButton} source={require('./assets/arrow-left.png')}/></TouchableOpacity>
+        <TouchableOpacity style={style.backgroundButton} ><Image style={style.imageBackgroundButton} source={require('../assets/arrow-left.png')}/></TouchableOpacity>
         <Text style={{fontSize : 20, textAlign : 'center', fontWeight:700}}>Checkout</Text>
         <Text style={{color : '#F2F4F7'}}>.</Text>
       </View>
       <View style={{marginHorizontal:20, backgroundColor:'#F2F4F7', paddingVertical:15, marginVertical:7.5, paddingHorizontal:10, borderRadius:25, flexDirection:'row', justifyContent:'space-between'}}>
         <View style={{flexDirection:'row', alignItems:'center'}}>
-          <Image style={{width:90, height:90, borderRadius:20}} source={require('./assets/th(1).png')}/>
+          <Image style={{width:90, height:90, borderRadius:20}} source={require('../assets/th(1).png')}/>
           <View style={{marginHorizontal:10}}>
             <Text style={{marginBottom:10}}>Lorem Ipsum</Text>
             <Text style={{fontWeight:700}}>IDR 12.00</Text>
@@ -94,7 +94,7 @@ const Checkout = ({navigation}) => {
         <View style={{backgroundColor:'#F2F4F7', borderRadius:20, paddingHorizontal:10, paddingVertical:5, marginHorizontal:20}}>
           <View style={{flexDirection:'row', justifyContent:'space-between', marginVertical:10, alignItems:'center'}}>
             <View style={{flexDirection:'row'}}>
-            <Image source={require('./assets/BCA.png')} style={{marginRight:10, borderRadius:10}}/>
+            <Image source={require('../assets/BCA.png')} style={{marginRight:10, borderRadius:10}}/>
               <View>
                 <Text style={{fontWeight:700}}>BCA</Text>
                 <Text>****-8976</Text>
@@ -106,7 +106,7 @@ const Checkout = ({navigation}) => {
           </View>
           <View style={{flexDirection:'row', justifyContent:'space-between', marginVertical:10, alignItems:'center'}}>
             <View style={{flexDirection:'row'}}>
-            <Image source={require('./assets/BNI.png')} style={{marginRight:10, borderRadius:10}}/>
+            <Image source={require('../assets/BNI.png')} style={{marginRight:10, borderRadius:10}}/>
               <View>
                 <Text style={{fontWeight:700}}>BNI</Text>
                 <Text>****-8976</Text>
@@ -118,7 +118,7 @@ const Checkout = ({navigation}) => {
           </View>
           <View style={{flexDirection:'row', justifyContent:'space-between', marginVertical:10, alignItems:'center'}}>
             <View style={{flexDirection:'row'}}>
-            <Image source={require('./assets/BRI.png')} style={{marginRight:10, borderRadius:10}}/>
+            <Image source={require('../assets/BRI.png')} style={{marginRight:10, borderRadius:10}}/>
               <View>
                 <Text style={{fontWeight:700}}>BRI</Text>
                 <Text>****-8976</Text>
@@ -130,7 +130,7 @@ const Checkout = ({navigation}) => {
           </View>
           <View style={{flexDirection:'row', justifyContent:'space-between', marginVertical:10, alignItems:'center'}}>
             <View style={{flexDirection:'row'}}>
-            <Image source={require('./assets/COD.png')} style={{marginRight:10, borderRadius:10}}/>
+            <Image source={require('../assets/COD.png')} style={{marginRight:10, borderRadius:10}}/>
               <View>
                 <Text style={{fontWeight:700}}>COD</Text>
                 <Text>****-8976</Text>
@@ -153,4 +153,4 @@ const Checkout = ({navigation}) => {
     )
 }
 
-export default Checkout;
+export default CheckoutPage;

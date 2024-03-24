@@ -13,7 +13,7 @@ import {CheckBox} from 'react-native';
 
 import React, {useState, useEffect} from 'react';
 
-const Profile = ({navigation}) =>{
+const ProfilePage = ({navigation}) =>{
 
   const style = StyleSheet.create({
       backgroundButton : {
@@ -166,4 +166,4 @@ const Profile = ({navigation}) =>{
   );
 }
 
-export default Profile;
+export default ProfilePage;
