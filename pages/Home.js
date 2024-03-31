@@ -1,11 +1,14 @@
 import {View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, SafeAreaView, TextInput} from 'react-native';
 import FAIcon from 'react-native-vector-icons/AntDesign';
+import { useGetBarang } from '../service/Service';
+import { FlatList } from 'react-native';
 
 const style = StyleSheet.create({
   
 });
 
 const Homepage = ({navigation}) => {
+    const barang = useGetBarang();
 
     const handleDetail = () => {
         navigation.navigate('Detail')
@@ -13,11 +16,32 @@ const Homepage = ({navigation}) => {
 
     const handleCart = () => {
       navigation.navigate('Cart')
-  }
+   }
 
-  const handleProfile = () => {
-    navigation.navigate('Profile')
-}
+    const handleProfile = () => {
+      navigation.navigate('Profile')
+    }
+
+    const handleCheckout = () => {
+      navigation.navigate('Checkout')
+    }
+
+    const renderItem = ({ item }) => (
+      <TouchableOpacity onPress={handleDetail}>
+          <View style={{alignSelf:'center'}}>
+              <Image source={require('../assets/th(1).png')} style={{ width: 150, height: 150 }} />
+              <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
+                  <View>
+                      <Text>{item.title}</Text>
+                      <Text>IDR {item.price}</Text>
+                  </View>
+                  <TouchableOpacity onPress={handleDetail} style={{ backgroundColor: '#1C2536', borderRadius: 50, justifyContent: 'center' }}>
+                      <Image source={require('../assets/add.png')} style={{ width: 37.5, height: 30 }} />
+                  </TouchableOpacity>
+              </View>
+          </View>
+      </TouchableOpacity>
+  );
 
     return(
         <SafeAreaView>
@@ -36,93 +60,9 @@ const Homepage = ({navigation}) => {
       </View>
       <ScrollView style={{height:400}} >
         <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
-          <View>
-            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
-            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-              <View>
-                <Text>Lorem Ipsum</Text>
-                <Text>IDR 12.00</Text>
-              </View>
-              <TouchableOpacity onPress={handleDetail} style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
-            </View>
-          </View>
-          <View>
-            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
-            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-              <View>
-                <Text>Lorem Ipsum</Text>
-                <Text>IDR 12.00</Text>
-              </View>
-              <TouchableOpacity onPress={handleDetail} style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
-            </View>
-          </View>
-        </View>
-        <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
-          <View>
-            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
-            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-              <View>
-                <Text>Lorem Ipsum</Text>
-                <Text>IDR 12.00</Text>
-              </View>
-              <TouchableOpacity onPress={handleDetail} style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
-            </View>
-          </View>
-          <View>
-            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
-            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-              <View>
-                <Text>Lorem Ipsum</Text>
-                <Text>IDR 12.00</Text>
-              </View>
-              <TouchableOpacity onPress={handleDetail} style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
-            </View>
-          </View>
-        </View>
-        <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
-          <View>
-            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
-            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-              <View>
-                <Text>Lorem Ipsum</Text>
-                <Text>IDR 12.00</Text>
-              </View>
-              <TouchableOpacity onPress={handleDetail} style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
-            </View>
-          </View>
-          <View>
-            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
-            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-              <View>
-                <Text>Lorem Ipsum</Text>
-                <Text>IDR 12.00</Text>
-              </View>
-              <TouchableOpacity onPress={handleDetail} style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
-            </View>
-          </View>
-        </View>
-        <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
-          <View>
-            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
-            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-              <View>
-                <Text>Lorem Ipsum</Text>
-                <Text>IDR 12.00</Text>
-              </View>
-              <TouchableOpacity onPress={handleDetail} style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
-            </View>
-          </View>
-          <View>
-            <Image source={require('../assets/th(1).png')} style={{width:150, height:150}} />
-            <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-              <View>
-                <Text>Lorem Ipsum</Text>
-                <Text>IDR 12.00</Text>
-              </View>
-              <TouchableOpacity onPress={handleDetail} style={{backgroundColor:'#1C2536', borderRadius:50,justifyContent:'center'}}><Image source={require('../assets/add.png')} style={{width:37.5, height:30}}/></TouchableOpacity>
-            </View>
-          </View>
-        </View>
+          <FlatList data={barang} renderItem={renderItem} keyExtractor={item => item.id.toString()} />
+          <FlatList data={barang} renderItem={renderItem} keyExtractor={item => item.id.toString()} />
+        </View> 
       </ScrollView>
       <View style={{flexDirection:'row', justifyContent:'space-evenly', marginTop:20}}>
         <TouchableOpacity><Image source={require('../assets/home-2.png')} /></TouchableOpacity>

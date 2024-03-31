@@ -9,11 +9,11 @@ import {
   TextInput,
 } from 'react-native';
 
-import {CheckBox} from 'react-native';
+import CheckBox from 'expo-checkbox';
 
 import React, {useState, useEffect} from 'react';
-
-const DetailPage = ({navigation}) => {
+ 
+const Detailpage = ({navigation}) => {
 
     const style = StyleSheet.create({
       backgroundButton : {
@@ -24,7 +24,6 @@ const DetailPage = ({navigation}) => {
       },
       header : {
         flexDirection : 'row',
-        flex : 1,
         alignItems : 'center',
         justifyContent : 'space-between',
         marginBottom : 20,
@@ -41,11 +40,24 @@ const DetailPage = ({navigation}) => {
       },
     });
 
+    const [slotpin, setSlotpin] = useState(false)
+    const [button, setButton] = useState(Boolean)
+    const [display, setDisplay] = useState(Boolean)
+    const [slotIDE, setSlotIDE] = useState(Boolean)
+
+    const handleCheckout = () => {
+      navigation.navigate('Login')
+    }
+
+    const handleHomepage = () => {
+      navigation.navigate('Homepage')
+    }
+
     return(
       <SafeAreaView>
       <View style={style.header}>
-        <TouchableOpacity style={style.backgroundButton} ><Image style={style.imageBackgroundButton} source={require('../assets/arrow-left.png')}/></TouchableOpacity>
-        <Text style={{fontSize : 20, textAlign : 'center', fontWeight:700}}>Detail</Text>
+        <TouchableOpacity onPress={handleHomepage} style={style.backgroundButton} ><Image style={style.imageBackgroundButton} source={require('../assets/arrow-left.png')}/></TouchableOpacity>
+        <Text style={{fontSize : 20, textAlign : 'center', fontWeight:700}}>detail</Text>
         <Text style={{color : '#F2F4F7'}}>.</Text>
       </View>
       <ScrollView style={{maxHeight:690}}>
@@ -91,10 +103,10 @@ const DetailPage = ({navigation}) => {
             <CheckBox value={slotIDE} onValueChange={newValue => {setSlotIDE(newValue)}}/>
           </View>
         </View>
-        <TouchableOpacity style={{backgroundColor:'#1C2536', marginHorizontal:20, paddingVertical:12.5, borderRadius:50, marginVertical:10}} ><Text style={{color:'white', textAlign:'center'}}>Add to Cart</Text></TouchableOpacity>
+        <TouchableOpacity onPress={handleCheckout} style={{backgroundColor:'#1C2536', marginHorizontal:20, paddingVertical:12.5, borderRadius:50, marginVertical:10}} ><Text style={{color:'white', textAlign:'center'}}>Add to Cart</Text></TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
     )
 }
 
-export default DetailPage;
+export default Detailpage;

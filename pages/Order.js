@@ -24,7 +24,6 @@ const MyorderPage = ({navigation}) => {
             },
             header : {
               flexDirection : 'row',
-              flex : 1,
               alignItems : 'center',
               justifyContent : 'space-between',
               marginBottom : 20,
@@ -41,10 +40,14 @@ const MyorderPage = ({navigation}) => {
             },
     });
 
+    const handleProfile = () => {
+      navigation.navigate('Profile')
+    }
+
     return(
         <SafeAreaView>
       <View style={style.header}>
-        <TouchableOpacity style={style.backgroundButton} ><Image style={style.imageBackgroundButton} source={require('../assets/arrow-left.png')}/></TouchableOpacity>
+        <TouchableOpacity onPress={handleProfile} style={style.backgroundButton} ><Image style={style.imageBackgroundButton} source={require('../assets/arrow-left.png')}/></TouchableOpacity>
         <Text style={{fontSize : 20, textAlign : 'center', fontWeight:700}}>My Order</Text>
         <Text style={{color : '#F2F4F7'}}>.</Text>
       </View>

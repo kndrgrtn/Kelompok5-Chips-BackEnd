@@ -8,6 +8,8 @@ import {
     SafeAreaView,
     TextInput,
   } from 'react-native';
+
+  import { useGetCart } from '../service/Service';
   
   import {CheckBox} from 'react-native';
   
@@ -24,7 +26,6 @@ const CartPage = ({navigation}) => {
             },
             header : {
               flexDirection : 'row',
-              flex : 1,
               alignItems : 'center',
               justifyContent : 'space-between',
               marginBottom : 20,
@@ -41,20 +42,13 @@ const CartPage = ({navigation}) => {
             },
     });
 
-    return(
-        <SafeAreaView>
-      <View style={style.header}>
-        <TouchableOpacity style={style.backgroundButton} ><Image style={style.imageBackgroundButton} source={require('../assets/arrow-left.png')}/></TouchableOpacity>
-        <Text style={{fontSize : 20, textAlign : 'center', fontWeight:700}}>Cart</Text>
-        <Text style={{color : '#F2F4F7'}}>.</Text>
-      </View>
-      <ScrollView>
-        <View style={{marginHorizontal:20, backgroundColor:'#F2F4F7', paddingVertical:15, marginVertical:7.5, paddingHorizontal:10, borderRadius:25, flexDirection:'row', justifyContent:'space-between', shadowRadius:5, shadowOpacity:0.35}}>
+    const renderItem = ({ item }) => (
+      <View style={{marginHorizontal:20, backgroundColor:'#F2F4F7', paddingVertical:15, marginVertical:7.5, paddingHorizontal:10, borderRadius:25, flexDirection:'row', justifyContent:'space-between', shadowRadius:5, shadowOpacity:0.35}}>
           <View style={{flexDirection:'row', alignItems:'center'}}>
             <Image style={{width:100, height:100, borderRadius:20}} source={require('../assets/th(1).png')}/>
             <View style={{marginHorizontal:10}}>
-              <Text style={{marginBottom:10}}>Lorem Ipsum</Text>
-              <Text>IDR 12.00</Text>
+              <Text style={{marginBottom:10}}>{item.title}</Text>
+              <Text>{item.price}</Text>
             </View>
           </View>
           <View style={{justifyContent:'space-between', alignItems:'end'}}>
@@ -66,6 +60,21 @@ const CartPage = ({navigation}) => {
             </View>
           </View>
         </View>
+    )
+
+    const handleHomepage = () => {
+      navigation.navigate('Homepage')
+    }
+
+    return(
+        <SafeAreaView>
+      <View style={style.header}>
+        <TouchableOpacity onPress={handleHomepage} style={style.backgroundButton} ><Image style={style.imageBackgroundButton} source={require('../assets/arrow-left.png')}/></TouchableOpacity>
+        <Text style={{fontSize : 20, textAlign : 'center', fontWeight:700}}>Cart</Text>
+        <Text style={{color : '#F2F4F7'}}>.</Text>
+      </View>
+      <ScrollView>
+        
         <View style={{marginHorizontal:20, backgroundColor:'#F2F4F7', paddingVertical:15, marginVertical:7.5, paddingHorizontal:10, borderRadius:25, flexDirection:'row', justifyContent:'space-between'}}>
           <View style={{flexDirection:'row', alignItems:'center'}}>
             <Image style={{width:100, height:100, borderRadius:20}} source={require('../assets/th(1).png')}/>

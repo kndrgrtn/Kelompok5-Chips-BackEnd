@@ -9,42 +9,31 @@ import {
     TextInput,
   } from 'react-native';
   
-  import {CheckBox} from 'react-native';
+  import CheckBox from 'expo-checkbox';
   
   import React, {useState, useEffect} from 'react';
 
 const CheckoutPage = ({navigation}) => {
 
-    const style = StyleSheet.create({
-        backgroundButton : {
-              backgroundColor : 'black',
-              paddingVertical : 10,
-              paddingHorizontal : 10,
-              borderRadius : 100
-            },
-            header : {
-              flexDirection : 'row',
-              flex : 1,
-              alignItems : 'center',
-              justifyContent : 'space-between',
-              marginBottom : 20,
-              backgroundColor : '#F2F4F7',
-              paddingHorizontal : 10,
-              paddingVertical : 20,
-            },
-            imageBackgroundButton : {
-              width : 40,
-              height : 40,
-              flexDirection : 'row',
-              alignItems : 'center',
-              justifyContent : 'center'
-            },
-    });
+    const handleSucces = () => {
+      navigation.navigate('Success')
+    }
+
+    const handleDetail = () => {
+      navigation.navigate('Detail')
+    }
+
+    const [shipReg, setShipReg] = useState(Boolean)
+    const [shipCarg, setShipCarg] = useState(Boolean)
+    const [payBCA, setPayBCA] = useState(Boolean)
+    const [payBNI, setPayBNI] = useState(Boolean)
+    const [payBRI, setPayBRI] = useState(Boolean)
+    const [payCOD, setPayCOD] = useState(Boolean)
 
     return(
         <SafeAreaView>
-      <View style={style.header}>
-        <TouchableOpacity style={style.backgroundButton} ><Image style={style.imageBackgroundButton} source={require('../assets/arrow-left.png')}/></TouchableOpacity>
+      <View style={{flexDirection : 'row',alignItems : 'center',justifyContent : 'space-between',marginBottom : 20,backgroundColor : '#F2F4F7',paddingHorizontal : 10,paddingVertical : 20,}}>
+        <TouchableOpacity onPress={handleDetail} style={{backgroundColor : 'black',paddingVertical : 10,paddingHorizontal : 10,borderRadius : 100}} ><Image style={{width : 40,height : 40,flexDirection : 'row',alignItems : 'center',justifyContent : 'center'}} source={require('../assets/arrow-left.png')}/></TouchableOpacity>
         <Text style={{fontSize : 20, textAlign : 'center', fontWeight:700}}>Checkout</Text>
         <Text style={{color : '#F2F4F7'}}>.</Text>
       </View>
@@ -74,7 +63,7 @@ const CheckoutPage = ({navigation}) => {
             </View>
             <View style={{flexDirection:'row', alignItems:'center'}}>
               <Text style={{marginHorizontal:10, fontWeight:700}}>IDR 10.00</Text>
-              <CheckBox/>
+                <CheckBox value={shipReg} onValueChange={newValue => {setShipReg(newValue)}}/>
             </View>
           </View>
           <View style={{flexDirection:'row', justifyContent:'space-between', marginVertical:10, alignItems:'center'}}>
@@ -84,7 +73,7 @@ const CheckoutPage = ({navigation}) => {
             </View>
             <View style={{flexDirection:'row', alignItems:'center'}}>
               <Text style={{marginHorizontal:10, fontWeight:700}}>IDR 15.00</Text>
-              <CheckBox/>
+              <CheckBox value={shipCarg} onValueChange={newValue => {setShipCarg(newValue)}}/>
             </View>
           </View>
         </View>
@@ -101,7 +90,7 @@ const CheckoutPage = ({navigation}) => {
               </View>
             </View>
             <View style={{flexDirection:'row', alignItems:'center'}}>
-              <CheckBox/>
+              <CheckBox value={payBCA} onValueChange={newValue => {setPayBCA(newValue)}}/>
             </View>
           </View>
           <View style={{flexDirection:'row', justifyContent:'space-between', marginVertical:10, alignItems:'center'}}>
@@ -113,7 +102,7 @@ const CheckoutPage = ({navigation}) => {
               </View>
             </View>
             <View style={{flexDirection:'row', alignItems:'center'}}>
-              <CheckBox/>
+              <CheckBox value={payBNI} onValueChange={newValue => {setPayBNI(newValue)}}/>
             </View>
           </View>
           <View style={{flexDirection:'row', justifyContent:'space-between', marginVertical:10, alignItems:'center'}}>
@@ -125,7 +114,7 @@ const CheckoutPage = ({navigation}) => {
               </View>
             </View>
             <View style={{flexDirection:'row', alignItems:'center'}}>
-              <CheckBox/>
+              <CheckBox value={payBRI} onValueChange={newValue => {setPayBRI(newValue)}}/>
             </View>
           </View>
           <View style={{flexDirection:'row', justifyContent:'space-between', marginVertical:10, alignItems:'center'}}>
@@ -137,7 +126,7 @@ const CheckoutPage = ({navigation}) => {
               </View>
             </View>
             <View style={{flexDirection:'row', alignItems:'center'}}>
-              <CheckBox/>
+              <CheckBox value={payCOD} onValueChange={newValue => {setPayCOD(newValue)}}/>
             </View>
           </View>
         </View>
@@ -147,7 +136,7 @@ const CheckoutPage = ({navigation}) => {
         <Text>Total</Text>
         <Text>12.00 IDR</Text>
       </View>
-      <TouchableOpacity style={{backgroundColor:'#1C2536', paddingVertical:15, borderRadius:50, marginHorizontal:20, marginTop:20}}><Text style={{textAlign:'center', color:'white'}}>Checkout</Text></TouchableOpacity>
+      <TouchableOpacity onPress={handleSucces} style={{backgroundColor:'#1C2536', paddingVertical:15, borderRadius:50, marginHorizontal:20, marginTop:20}}><Text style={{textAlign:'center', color:'white'}}>Checkout</Text></TouchableOpacity>
     </View>
   </SafeAreaView>
     )
